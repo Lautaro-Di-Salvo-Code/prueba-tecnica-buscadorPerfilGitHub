@@ -99,7 +99,7 @@ const PeticionPerfil = async () => {
      </div>
    </article>
      }
-      { userRepo?.map(e => (
+      {/* { userRepo?.map(e => (
     <article className='article__repositories__styles' key={e?.id}>
     <div className='titles-repoUser'>
       <a style={{fontSize: "1.3rem"}} href={e.html_url} target="_blank">
@@ -120,7 +120,7 @@ const PeticionPerfil = async () => {
       <p>Stars</p>
     </div>
   </article>
-    )) }  
+    )) }   */}
 
     
           </section>
