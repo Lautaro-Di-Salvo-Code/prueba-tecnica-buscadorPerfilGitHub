@@ -84,6 +84,7 @@ const PeticionPerfil = async () => {
     </div>
       
       <section className='InfoResposUser'>
+        {/* Esto tendria que ejecutarse pero nisiquiera renderiza */}
       {userRepo === false && 
     <article >
      <div className='titles-repoUser'>
@@ -99,6 +100,14 @@ const PeticionPerfil = async () => {
      </div>
    </article>
      }
+
+
+  {/* Este codigo de abajo es un dolor de cabeza, hay que dejarlo comentado,
+    ejecutar las dos api pero solo dejando que se muestre lo de la api de usuario, 
+    y luego descomentar este codigo para que se renderize todo, 
+    sinó se cae toda la app, tampoco se puede refresacar la pagina con esto descomentado, sinó tambien se cae todo
+   */}
+
       {/* { userRepo?.map(e => (
     <article className='article__repositories__styles' key={e?.id}>
     <div className='titles-repoUser'>
