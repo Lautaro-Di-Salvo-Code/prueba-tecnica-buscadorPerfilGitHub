@@ -1,0 +1,213 @@
+
+
+:root{
+    --general-backgroundcolor: #20293A ;
+    --max-width: 1200px;
+    --descriptive-text: #5f6c77 ;
+    --border-box-radios: 1em;
+}
+html{
+    background-color: var(--general-backgroundcolor);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .98vw;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    scrollbar-width: thin;
+    scrollbar-color: #242121 #e2dede;
+}
+
+*{
+    margin: 0;
+
+}
+
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: #cac8c8;
+
+}
+.header-styles{
+    height: 32vh;
+    /*  */
+    background-image: url("https://i.pinimg.com/originals/d5/e4/c5/d5e4c5a8db14e61a1adac8e71b5da2bf.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+
+.div-inputTextAndEnter{
+    margin: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* estilos input animado */
+.input {
+    max-width: var(--max-width);
+    margin: auto;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: var(--border-box-radios);
+    padding: 1rem;
+    background-color: var(--general-backgroundcolor);
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+}
+.input::placeholder{
+    color: var(--descriptive-text);
+    transition: .5s;
+}
+
+.input[type="search"]{
+    font-size: 1.4em;
+    border-radius: 10px;
+} 
+.input[type="search"]:focus{
+    color: #fff;
+  }
+  .input:focus {
+      background-color: #313f59;
+      transform: scale(1.05);
+      box-shadow: 13px 13px 100px #576f9a,
+      -13px -13px 100px #3d4e6d;
+}
+.input[type="search"]::placeholder{
+    color: var(--descriptive-text);
+}
+
+  .input:focus::placeholder{
+    color: #fff;
+    /* transition: .5s; */
+  }
+
+/* info del usuario  */
+.div-infoUser{
+    display: flex;
+    justify-content: center;
+    max-width: var(--max-width) ;
+    margin: auto;
+}
+.div-infoUser>*{
+    padding: 1rem;
+}
+
+.div-infoUser div>*{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 3rem;
+    
+}
+
+.div-infoUser .div-infoUser__div>b{
+    background-color: #111629;
+    color: var(--descriptive-text) ;
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: var(--border-box-radios) ;
+}
+.div-infoUser__div b >p{
+    padding-left: 10px;
+}
+.div-after__request{
+    color: #fff;
+}
+.div-infoUser__div{
+    padding-top: 2rem;
+
+}
+.img-git{
+    border-radius: 2em;
+    height: auto;
+    width: 6em;
+}
+.titleResposUser{
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    max-width: var(--max-width);
+    /* width: 100%; */
+    margin: 2rem auto;
+}
+.article-section__titleResposUser{
+    display: flex;
+    
+    justify-items:center;
+    padding-right:  35rem;
+}
+.titleResposUser-howpeople{
+    color: var(--descriptive-text);
+    font-weight: 900;
+}
+.InfoResposUser{
+    margin: auto;
+    max-width: 79rem;
+    display: grid ;
+    justify-content: center;
+    grid-template-columns: repeat(2,34% ) ;
+    grid-template-rows: repeat(auto-fill, minmax(4rem,1fr)) ;
+    gap: 2em;
+}
+@media screen and (max-width: 800px) {
+    .InfoResposUser{
+    display: grid ;
+    justify-content: center;
+    grid-template-columns: 90% ;
+    grid-template-rows: repeat(auto-fill, minmax(4rem,1fr)) ;
+    gap: 2em;
+    }
+}
+.button-search{
+    color: #fff;
+    background-color: var(--general-backgroundcolor);
+    height: 27px;
+    font-size: 1.4em;
+    cursor: pointer;
+    border-radius:var(--border-box-radios) ;
+    border: none;
+}
+.button-search:hover{
+    background-color: #354461 ;
+}
+.article__repositories__styles{
+    padding: 2rem;
+}
+
+.InfoResposUser > article{
+    margin: auto;
+    height: max-content;
+    width: fit-content;
+    border-radius: var(--border-box-radios) ;
+    background: linear-gradient(89deg, #12182F -1%, #12182F 12%, #1A1943 48%);
+    
+}
+.Description-projects{
+    color: var(--descriptive-text);
+    width: 21rem;
+    padding: 1rem 0;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+.titles-repoUser{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+.licence-andOtrhervalue{
+    display: flex;
+    gap: 1em;
+    
+}
