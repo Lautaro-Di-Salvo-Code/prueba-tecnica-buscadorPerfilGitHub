@@ -121,10 +121,8 @@ const PeticionPerfil = async () => {
       <p>MIT Licience</p>
       <div style={{display: "flex" , gap: "5px"}}>
 
-      <img style={{height: "auto", width: "1.5rem"}}
-       src={`https://cdn.iconscout.com/icon/free/png-512
-       /free-git-fork-3603485-3003810.png?f=webp&w=256`} alt="" />
-      <p>{e.forks}</p>
+      
+      <p>Forks: {e.forks}</p>
       </div>
       <p></p>
       <p>Stars</p>
