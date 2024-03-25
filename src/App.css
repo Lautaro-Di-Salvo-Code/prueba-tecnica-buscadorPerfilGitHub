@@ -12,6 +12,7 @@ html{
     font-size: .98vw;
     font-family: "Roboto", sans-serif;
     color: #fff;
+    overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #242121 #e2dede;
 }
