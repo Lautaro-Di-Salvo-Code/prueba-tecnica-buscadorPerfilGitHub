@@ -26,6 +26,7 @@ const PeticionPerfil = async () => {
     const req2 = await fetch(`https://api.github.com/users/${username}/repos`)
     const res2 = await req2.json()
     console.log(res2)
+    // console.log(Boolean(res2))
     setTimeout(() => {
     
       setUserRepo(res2)
@@ -84,31 +85,31 @@ const PeticionPerfil = async () => {
     </div>
       
       <section className='InfoResposUser'>
-        {/* Esto tendria que ejecutarse pero nisiquiera renderiza */}
-      {userRepo === false && 
-    <article >
-     <div className='titles-repoUser'>
- 
-       <p>Repositorio x</p>
-       <p>Info Repositorio</p>
+      {userRepo.length === 2 && 
+   (<article className='article__repositories__styles' >
+   <div className='titles-repoUser'>
+     <a style={{fontSize: "1.3rem"}} href="" target="_blank">
+     <p>Repositorio x</p>
+     </a>
+       <p  className='Description-projects'>Info Repositorio</p>
+   </div>
+   <div className='licence-andOtrhervalue'>
+     <p>MIT Licience</p>
+     <div style={{display: "flex" , gap: "5px"}}>
+
+     <img style={{height: "auto", width: "1.5rem"}}
+      src={`https://cdn.iconscout.com/icon/free/png-512
+      /free-git-fork-3603485-3003810.png?f=webp&w=256`} alt="" />
+     <p>Forks </p>
      </div>
-     <div className='licence-andOtrhervalue'>
- 
-       <p>licience</p>
-       <p>value</p>
-       <p>value</p>
-     </div>
-   </article>
+     <p></p>
+     <p>Stars</p>
+   </div>
+ </article>)
      }
 
 
-  {/* Este codigo de abajo es un dolor de cabeza, hay que dejarlo comentado,
-    ejecutar las dos api pero solo dejando que se muestre lo de la api de usuario, 
-    y luego descomentar este codigo para que se renderize todo, 
-    sinó se cae toda la app, tampoco se puede refresacar la pagina con esto descomentado, sinó tambien se cae todo
-   */}
-
-      {/* { userRepo?.map(e => (
+      { userRepo.length > 2 && userRepo.map(e => (
     <article className='article__repositories__styles' key={e?.id}>
     <div className='titles-repoUser'>
       <a style={{fontSize: "1.3rem"}} href={e.html_url} target="_blank">
@@ -129,9 +130,7 @@ const PeticionPerfil = async () => {
       <p>Stars</p>
     </div>
   </article>
-    )) }   */}
-
-    
+    )) }  
           </section>
     </article>
     </>
