@@ -44,7 +44,7 @@ const PeticionPerfil = async () => {
     }
   
 
-
+console.log(userRepo.message)
     
 
   return (
@@ -87,7 +87,12 @@ const PeticionPerfil = async () => {
     </div>
 
       <section className='InfoResposUser'>
-      {userRepo.length <= 2 && 
+
+      {userRepo.message === 
+      "API rate limit exceeded for 190.246.99.222. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+     && ( <h1 style={{display: "flex" , justifyContent: "center", margin: "auto"}}>Wait a few minutes, the API request limit has been reached </h1> )}
+
+      {userRepo.message === "Not Found" && 
    (<article className='article__repositories__styles' >
    <div className='titles-repoUser'>
      <a style={{fontSize: "1.3rem"}} href="" target="_blank">
