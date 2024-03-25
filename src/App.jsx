@@ -72,8 +72,10 @@ const PeticionPerfil = async () => {
       <section className='titleResposUser'>
         
       <div >
-       
+          <a href={prophile.html_url} target="_blank" rel="noopener noreferrer">
+
           <h2 >{prophile?.login || "GitHub" }</h2>
+          </a>
         
           
       </div>
@@ -83,10 +85,9 @@ const PeticionPerfil = async () => {
       </div>
       </section>
     </div>
-      {userRepo.length <= 2 && (<div><h1>{userRepo.documentation_url}</h1> <h2>{userRepo.message}</h2></div>)}
 
       <section className='InfoResposUser'>
-      {/* {userRepo.length === 2 && 
+      {userRepo.length <= 2 && 
    (<article className='article__repositories__styles' >
    <div className='titles-repoUser'>
      <a style={{fontSize: "1.3rem"}} href="" target="_blank">
@@ -107,7 +108,7 @@ const PeticionPerfil = async () => {
      <p>Stars</p>
    </div>
  </article>)
-     } */}
+     }
 
 
       { userRepo.length > 2 && userRepo.map(e => (
