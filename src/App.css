@@ -109,11 +109,12 @@ a:hover{
     
 }
 .img-git{
-    border-radius: 2em;
+    border-radius: 2rem;
     height: auto;
-    width: 6em;
+    width: 6rem;
     @media screen and (width< 1105px) {
         margin: auto;
+        width: 12rem;
 
     }
 }
