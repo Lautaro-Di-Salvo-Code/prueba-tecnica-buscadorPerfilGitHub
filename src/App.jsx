@@ -1,6 +1,7 @@
 import {  useEffect, useState } from 'react'
 import './App.css'
 import { UserInfo } from './UserInfo'
+import { Load } from './Load'
 
 function App() {
 
@@ -8,21 +9,25 @@ function App() {
   const [username, setUsername] = useState("")
   const [prophile, setProphile] = useState({})
   const [userRepo, setUserRepo] = useState([])
+  const [load, setLoad] = useState(false)
 // esta separado en string y en array por el tipo de valores que deseo devolver
   
 
 const PeticionPerfil = async () => { 
+  setLoad(true)
   const req = await fetch(`https://api.github.com/users/${username}`)
   const res = await req.json()
   // console.log(res)
-
+  
   setTimeout(() => {
     
     setProphile(res)
-  }, 1000);
+  }, 2000);
+  setLoad(false)
   }
   // usé dos funciones por separado por la diferencia de cantidad de informacion que viene en cada peticion
   const PeticionRepo =  async () => { 
+    setLoad(true)
     const req2 = await fetch(`https://api.github.com/users/${username}/repos`)
     const res2 = await req2.json()
     // console.log(res2)
@@ -30,7 +35,8 @@ const PeticionPerfil = async () => {
     setTimeout(() => {
     
       setUserRepo(res2)
-    }, 1000);
+    }, 2000);
+    setLoad(false)
   }
 // LA PETICION LLEGÓ A SU MAXIMO A LAS 6:37
   useEffect(() => {
@@ -86,11 +92,13 @@ const PeticionPerfil = async () => {
       </section>
     </div>
 
-      <section className='InfoResposUser'>
-
       {userRepo.message === 
       "API rate limit exceeded for 190.246.99.222. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
-     && ( <h1 style={{display: "flex" , justifyContent: "center", margin: "auto"}}>Wait a few minutes, the API request limit has been reached </h1> )}
+     && ( <h1 style={{display: "flex" , justifyContent: "center", margin: "auto", padding: "3rem"}}>Wait a few minutes, the API request limit has been reached </h1> )}
+
+
+      <section className='InfoResposUser'>
+      
 
       {userRepo.message === "Not Found" && 
    (<article className='article__repositories__styles' >
@@ -115,7 +123,7 @@ const PeticionPerfil = async () => {
  </article>)
      }
 
-
+      {load && <Load/>  }
       { userRepo.length > 2 && userRepo.map(e => (
     <article className='article__repositories__styles' key={e?.id}>
     <div className='titles-repoUser'>
