@@ -14,7 +14,7 @@ function App() {
 const PeticionPerfil = async () => { 
   const req = await fetch(`https://api.github.com/users/${username}`)
   const res = await req.json()
-  console.log(res)
+  // console.log(res)
 
   setTimeout(() => {
     
@@ -25,7 +25,7 @@ const PeticionPerfil = async () => {
   const PeticionRepo =  async () => { 
     const req2 = await fetch(`https://api.github.com/users/${username}/repos`)
     const res2 = await req2.json()
-    console.log(res2)
+    // console.log(res2)
     // console.log(Boolean(res2))
     setTimeout(() => {
     
@@ -44,7 +44,7 @@ const PeticionPerfil = async () => {
     }
   
 
-console.log(userRepo.message)
+// console.log(userRepo.message)
     
 
   return (
