@@ -121,6 +121,7 @@ a:hover{
 .div-infoUser>*{
     padding: 1rem;
     @media screen and (width< 1105px) {
+        padding: .3rem;
         display: flex;
         justify-content: center;
 
@@ -151,7 +152,10 @@ a:hover{
 }
 .div-infoUser__div{
     padding-top: 2rem;
+    @media screen and (width< 1105px) {
+        padding-top: 1rem;
 
+    }
 }
 
 .titleResposUser{
