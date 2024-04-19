@@ -209,7 +209,7 @@ a:hover{
 .button-search{
     color: #fff;
     background-color: var(--general-backgroundcolor);
-    height: 27px;
+    height: 35px;
     font-size: 1.4em;
     cursor: pointer;
     border-radius:var(--border-box-radios) ;

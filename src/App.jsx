@@ -60,8 +60,8 @@ const PeticionPerfil = async () => {
           onChange={SearchUser} 
           placeholder=' Write the github user' />
           {/* Decidí hacer dos botones aparte, no los tenia previstos */}
-          <button className='button-search' onClick={PeticionPerfil}>Search Userinfo</button>
-          <button className='button-search' onClick={PeticionRepo}>Search Repository</button>
+          <button className='button-search' onClick={PeticionPerfil}>🔍 Userinfo</button>
+          <button className='button-search' onClick={PeticionRepo}>🔍 Repository</button>
         </div>
     </header>
 
