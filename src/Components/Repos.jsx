@@ -11,7 +11,7 @@ export const Repos = ({userRepo, load}) => {
      <a style={{fontSize: "1.3rem"}} href="" target="_blank">
      <p>Repositorio x</p>
      </a>
-       <p  className='Description-projects'>Info Repositorio</p>
+       <p  className='Description-projects'>Repo information</p>
    </div>
    <div className='licence-andOtrhervalue'>
      <p>MIT Licience</p>
@@ -34,7 +34,7 @@ export const Repos = ({userRepo, load}) => {
       <a style={{fontSize: "1.3rem"}} href={e.html_url} target="_blank">
       <p>{e?.name || "Repositorio x"}</p>
       </a>
-        <p  className='Description-projects'>{e?.description|| "Info Repositorio"}</p>
+        <p  className='Description-projects'>{e?.description|| "Repo information"}</p>
     </div>
     <div className='licence-andOtrhervalue'>
       <p>MIT Licience</p>
