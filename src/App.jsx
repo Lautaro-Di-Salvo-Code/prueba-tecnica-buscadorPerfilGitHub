@@ -22,8 +22,8 @@ const PeticionPerfil = async () => {
   setTimeout(() => {
     
     setProphile(res)
-  }, 2000);
-  setLoad(false)
+    setLoad(false)
+  }, 1000);
   }
   // usé dos funciones por separado por la diferencia de cantidad de informacion que viene en cada peticion
   const PeticionRepo =  async () => { 
@@ -35,8 +35,8 @@ const PeticionPerfil = async () => {
     setTimeout(() => {
     
       setUserRepo(res2)
-    }, 2000);
-    setLoad(false)
+      setLoad(false)
+    }, 1000);
   }
 // LA PETICION LLEGÓ A SU MAXIMO A LAS 6:37
   useEffect(() => {
@@ -91,7 +91,7 @@ const PeticionPerfil = async () => {
       </div>
       </section>
     </div>
-
+    { load && <Load/>  }
       {userRepo.message === 
       "API rate limit exceeded for 190.246.99.222. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
      && ( <h1 style={{display: "flex" , justifyContent: "center", margin: "auto", padding: "3rem"}}>Wait a few minutes, the API request limit has been reached </h1> )}
@@ -99,8 +99,8 @@ const PeticionPerfil = async () => {
 
       <section className='InfoResposUser'>
       
-
-      {userRepo.message === "Not Found" && 
+        
+      {!load &&userRepo.message === "Not Found" && 
    (<article className='article__repositories__styles' >
    <div className='titles-repoUser'>
      <a style={{fontSize: "1.3rem"}} href="" target="_blank">
@@ -123,7 +123,7 @@ const PeticionPerfil = async () => {
  </article>)
      }
 
-      {load && <Load/>  }
+      
       { userRepo.length > 2 && userRepo.map(e => (
     <article className='article__repositories__styles' key={e?.id}>
     <div className='titles-repoUser'>
