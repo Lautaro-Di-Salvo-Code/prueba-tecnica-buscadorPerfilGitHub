@@ -13,8 +13,7 @@ export const InputSearch = ({PeticionPerfil, PeticionRepo, SearchUser }) => {
           onChange={SearchUser} 
           placeholder=' Write the github user' />
           {/* Decidí hacer dos botones aparte, no los tenia previstos */}
-          <button className='button-search' onClick={PeticionPerfil}>🔍 Userinfo</button>
-          <button className='button-search' onClick={PeticionRepo}>🔍 Repository</button>
+          <button className='button-search' onClick={PeticionPerfil}>🔍 Search Prophile</button>
         </div>
     </header>
 

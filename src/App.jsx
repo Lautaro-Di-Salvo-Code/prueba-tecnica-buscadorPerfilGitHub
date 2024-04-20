@@ -46,7 +46,7 @@ const PeticionPerfil = async () => {
   useEffect(() => {
     PeticionRepo()
 
-  }, [])
+  }, [username])
   
 
   const SearchUser = (e) => { 
