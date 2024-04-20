@@ -1,7 +1,11 @@
 import {  useEffect, useState } from 'react'
 import './App.css'
 import { UserInfo } from './UserInfo'
-import { Load } from './Load'
+import { Load } from './Load/Load'
+import { Repos } from './Components/Repos'
+import { UserGithubName } from './Components/User'
+import { RequestLimit } from './Components/RequestLimit'
+import { InputSearch } from './Components/InputSearch'
 
 function App() {
 
@@ -48,102 +52,29 @@ const PeticionPerfil = async () => {
   const SearchUser = (e) => { 
     setUsername(e.target.value)
     }
-  
-
-// console.log(userRepo.message)
-    
 
   return (
     <>
-    <header className='header-styles'>
-        <div className='div-inputTextAndEnter'>
-          <input className='input' type="search" 
-          name="inputusername"
-          autoComplete='on'
-          // Acá estuve tratando de hacer las dos peticiones con un solo enter pero no me funcionaba 
-          // ningun metodo que se me ocurria
-          // onKeyDown={(e)=> { e.code === "Enter" ? EjecuteBothRequest: null} }
-          onChange={SearchUser} 
-          placeholder=' Write the github user' />
-          {/* Decidí hacer dos botones aparte, no los tenia previstos */}
-          <button className='button-search' onClick={PeticionPerfil}>🔍 Userinfo</button>
-          <button className='button-search' onClick={PeticionRepo}>🔍 Repository</button>
-        </div>
-    </header>
+    <InputSearch  
+     PeticionPerfil={PeticionPerfil}
+      PeticionRepo={PeticionRepo}
+      SearchUser={SearchUser}
+      />
 
     <UserInfo prophile={prophile} />
+    {/* CUANDO NO HAY NADA CARGADO COMO USUARIO */}
     <article style={{marginBottom: "3rem"}} >
-    <div className='article-section__titleResposUser'>
+    <UserGithubName prophile={prophile}/>
 
-      <section className='titleResposUser'>
-        
-      <div >
-          <a href={prophile.html_url} target="_blank" rel="noopener noreferrer">
-
-          <h2 >{prophile?.login || "GitHub" }</h2>
-          </a>
-        
-          
-      </div>
-      <div>
-
-        <p className='titleResposUser-howpeople'>How people build software.</p>
-      </div>
-      </section>
-    </div>
     { load && <Load/>  }
-      {userRepo.message === 
-      "API rate limit exceeded for 190.246.99.222. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
-     && ( <h1 style={{display: "flex" , justifyContent: "center", margin: "auto", padding: "3rem"}}>Wait a few minutes, the API request limit has been reached </h1> )}
+    {/* Cuando las peticiones llegaron a su limite */}
+    <RequestLimit userRepo={userRepo}/>
 
 
       <section className='InfoResposUser'>
       
         
-      {!load &&userRepo.message === "Not Found" && 
-   (<article className='article__repositories__styles' >
-   <div className='titles-repoUser'>
-     <a style={{fontSize: "1.3rem"}} href="" target="_blank">
-     <p>Repositorio x</p>
-     </a>
-       <p  className='Description-projects'>Info Repositorio</p>
-   </div>
-   <div className='licence-andOtrhervalue'>
-     <p>MIT Licience</p>
-     <div style={{display: "flex" , gap: "5px"}}>
-
-     <img style={{height: "auto", width: "1.5rem"}}
-      src={`https://cdn.iconscout.com/icon/free/png-512
-      /free-git-fork-3603485-3003810.png?f=webp&w=256`} alt="" />
-     <p>Forks </p>
-     </div>
-     <p></p>
-     <p>Stars</p>
-   </div>
- </article>)
-     }
-
-      
-      { userRepo.length > 2 && userRepo.map(e => (
-    <article className='article__repositories__styles' key={e?.id}>
-    <div className='titles-repoUser'>
-      <a style={{fontSize: "1.3rem"}} href={e.html_url} target="_blank">
-      <p>{e?.name || "Repositorio x"}</p>
-      </a>
-        <p  className='Description-projects'>{e?.description|| "Info Repositorio"}</p>
-    </div>
-    <div className='licence-andOtrhervalue'>
-      <p>MIT Licience</p>
-      <div style={{display: "flex" , gap: "5px"}}>
-
-      
-      <p>Forks: {e.forks}</p>
-      </div>
-      <p></p>
-      <p>Stars</p>
-    </div>
-  </article>
-    )) }  
+          <Repos userRepo={userRepo} load={load}/>
           </section>
     </article>
     </>
