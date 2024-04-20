@@ -45,8 +45,8 @@ const PeticionPerfil = async () => {
 // LA PETICION LLEGÓ A SU MAXIMO A LAS 6:37
   useEffect(() => {
     PeticionRepo()
-
-  }, [username])
+    // PeticionPerfil()
+  }, [])
   
 
   const SearchUser = (e) => { 
