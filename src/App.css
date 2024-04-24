@@ -166,14 +166,17 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    height: 3rem;
     
+    height: 3rem;
+    text-wrap: wrap;
 }
 
 .div-infoUser .div-infoUser__div>b{
     background-color: #111629;
     color: var(--descriptive-text) ;
     width: fit-content;
+    
+    height: fit-content;
     padding: 0.5em 1em;
     border-radius: var(--border-box-radios) ;
 }
@@ -265,7 +268,7 @@ a:hover{
 }
 .Description-projects{
     color: var(--descriptive-text);
-    width: 21rem;
+    min-width: 11rem;
     height: 7rem;
     padding: 1rem 0;
     font-weight: 800;
