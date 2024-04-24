@@ -61,10 +61,10 @@ const PeticionPerfil = async () => {
       SearchUser={SearchUser}
       />
 
-    <UserInfo prophile={prophile} />
+    <UserInfo prophile={prophile} load={load}/>
     {/* CUANDO NO HAY NADA CARGADO COMO USUARIO */}
     <article style={{marginBottom: "3rem"}} >
-    <UserGithubName prophile={prophile}/>
+    <UserGithubName prophile={prophile} load={load}/>
 
     { load && <Load/>  }
     {/* Cuando las peticiones llegaron a su limite */}
