@@ -272,7 +272,7 @@ a:hover{
 }
 .Description-projects{
     color: var(--descriptive-text);
-    width: 25rem;
+    width: 23rem;
     min-height: 7rem;
     padding: 1rem 0;
     font-weight: 800;
