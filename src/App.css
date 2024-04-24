@@ -272,8 +272,8 @@ a:hover{
 }
 .Description-projects{
     color: var(--descriptive-text);
-    width: 22rem;
-    height: 7rem;
+    width: 25rem;
+    min-height: 7rem;
     padding: 1rem 0;
     font-weight: 800;
     font-size: 1.2rem;
@@ -291,5 +291,5 @@ a:hover{
 .licence-andOtrhervalue{
     display: flex;
     gap: 1em;
-    
+    margin-top: .5rem;
 }
