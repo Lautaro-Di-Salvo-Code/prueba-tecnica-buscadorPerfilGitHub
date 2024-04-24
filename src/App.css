@@ -71,7 +71,9 @@ a:hover{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
+    @media screen and (width < 1105px) {
+        height: 23vh;
+    }
 }
 
 
@@ -144,7 +146,7 @@ a:hover{
     width: 6rem;
     @media screen and (width< 1105px) {
         margin: auto;
-        width: 12rem;
+        /* width: 12rem; */
 
     }
 }
