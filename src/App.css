@@ -278,7 +278,7 @@ a:hover{
     font-weight: 800;
     font-size: 1.2rem;
     @media screen and (width < 1105px) {
-          min-width: 9rem;     
+          width: 9rem;     
           
     }
 }
